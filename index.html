@@ -10,44 +10,59 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    
+<!--    <div id="mask"></div>-->
     
     <div class="row" style="padding:0px;margin:10px;">
-<!--         <div class="container-fluid">-->
-<!--            <div class="collapse navbar-collapse">-->
-                <div class="col-sm-1"></div>
-        
-                <div class="col-sm-1" id="navleft" style="padding:0px;">
-                    <a>
-                        <img src="telaLogoWithoutBorder.png" width="70px">
-                    </a>
-                </div>
-                <div class="col-sm-9" id="navright">
-       
-                    <ul class="nav navbar-nav navbar-right" style="height:80px">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Sign In</a></li>
-                        <li><a href="#">Register</a></li>
-        <!--
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-1" id="navleft" style="padding:0px;">
+            <a>
+                <img src="telaLogoWithoutBorder.png" width="70px">
+            </a>
+        </div>
+        <div class="col-sm-9" id="navright">
+
+            <ul class="nav navbar-nav navbar-right" style="height:80px;margin-left">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In</a>
+                    <ul class="dropdown-menu" id="register">
+                        <li>
+                            <form>    
+                                Username: <input type="text" class="form-control">
+                                Password: <input type="text" class="form-control">
+                                
+                                <input type="submit" value="Login" class="btn reg_btn">
+                                <input type="submit" value="Register" class="btn reg_btn">
+                            </form>
                         </li>
-        -->
                     </ul>
-                </div>
-                <div class="col-sm-1"></div>
-<!--            </div>-->
-<!--        </div>-->
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-1"></div>
     </div>
     
+    
+    <div id="videocontainer">
+        <video autoplay  poster="poster.png" id="bgvid" loop>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="row" style="padding:0px;margin:10px;">
+        
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10" id="main_content">
+            <h1>We do your Laundry</h1>
+            <center>
+                <a class="btn_link" href="#">Learn More</a><br>
+                <a class="btn_link" href="#">Sign In</a>
+            </center>
+        </div>
+        <div class="col-sm-1"></div>      
+    </div>
     
     
     
@@ -55,9 +70,6 @@
     <script src="tela.js"></script>
     
     <div ng-app="tela" ng-controller="tela_ctrl">
-        
-            
-        
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>

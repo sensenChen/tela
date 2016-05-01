@@ -2,18 +2,18 @@
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif; font-weight: 500;
+    
 }
 
 #navright {
-    background:white;
+/*    background:white;*/
 /*    border:1px solid #E7E7E7;*/
 /*    border-left:1px solid #E7E7E7;*/
-    border-right:3px solid black;
-    border-top:3px solid black;
-    border-bottom:3px solid black;
+/*    border-right:3px solid black;*/
+/*    border-top:3px solid black;*/
+/*    border-bottom:3px solid black;*/
 /*    padding:10px;*/
     height: 80px;
-    
 }
 
 #navright li{
@@ -33,23 +33,167 @@
 }
 
 #navleft {
-    background:white;
-    border-left:3px solid black;
+/*    background:white;*/
+/*    border-left:3px solid black;*/
 /*    border-right:1px solid #E7E7E7;*/
-    border-top:3px solid black;
-    border-bottom:3px solid black;
+/*    border-top:3px solid black;*/
+/*    border-bottom:3px solid black;*/
 /*    padding:5px;*/
     height: 80px;
     
 }
 #navleft img {
     margin: 0px;
-    border-right: 3px solid black;
+    border-left: 3px solid black;
     height: 100%;
     width: 80px;
+    border-right: 3px solid black; 
+    border-top: 3px solid black; 
+    border-bottom: 3px solid black; 
+}
+
+#main_content {
+    margin-top: 20px;
+/*    margin:10px;*/
+    height: 400px;
+/*    background: white;*/
+/*    border: 3px black solid;*/
+}
+
+#main_content h1{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.main_btn {
+
+}
+
+.btn_link{
+    text-decoration: none;
+    background: none;
+    width: 200px;
+    display: inline-block;
+    margin-top: 20px;
+    border: 3px solid black;
+    outline: none;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 20px;
+    color: black;
+}
+
+.btn_link:hover{
+    text-decoration: none;
+    background: black;
+    color: white;
+}
+
+
+#register{
+    padding: 10px;
+    background: none;
+    
+}
+
+.reg_btn {
+    background: white;
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+
+/*_________________*/
+body {
+    margin: 0;
+    
+    
+}
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+/*    background: url('') no-repeat;*/
+    background-size: cover;
+    transition: 1s opacity;
+}
+.stopfade { 
+   opacity: .5;
+}
+
+#videocontainer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -80;
+    background:white;
+    opacity: 0.3;
+}
+
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
 /*
-    border-right: 1px solid black; 
-    border-top: 0px solid black; 
-    border-bottom: 1px solid black; 
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
 */
+/*
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+*/
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(//demosthenes.info/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
 }
