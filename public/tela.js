@@ -9,7 +9,7 @@ tela_app.controller("tela_ctrl",function($scope){
 
 var dash_app = angular.module("dash",[]);
 dash_app.controller("dash_ctrl",function($scope){
-    $scope.name = "John Doe"
+    $scope.name = "Sensen"
     $scope.active = "Dashboard"
     $scope.options = [
         {value:"Dashboard", color: "black"},
