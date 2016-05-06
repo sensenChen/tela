@@ -11,10 +11,16 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+
 // server route handler
-app.get('/signin', function(req, res){
-    res.sendFile(__dirname + '/public/signin.html');
+app.get('/dashboard', function(req, res){
+    res.sendFile(__dirname + '/public/dash.html');
 });
+
+//// server route handler
+//app.get('/signin', function(req, res){
+//    res.sendFile(__dirname + '/public/signin.html');
+//});
 
 
 

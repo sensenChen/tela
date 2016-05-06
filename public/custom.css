@@ -91,6 +91,13 @@
     color: white;
 }
 
+.btn_link:visited{
+    text-decoration: none;
+}
+.btn_link:active{
+    text-decoration: none;
+}
+
 
 #register{
     padding: 10px;
@@ -103,6 +110,37 @@
     width: 100%;
     padding: 5px;
     margin-top: 10px;
+}
+
+
+#sidemenu {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 0px;
+    padding: 30px;
+    width: 300px;
+    height: 100%;
+    min-height: 660px;
+}
+
+#sidemenu h4{
+    margin-left: 5px;
+}
+
+.sidemenuitem {
+    margin-bottom: 30px;
+    color: #9b9b9b;
+/*    margin-top: 50px;*/
+    list-style: none;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#active {
+    color: black;
+}
+
+#side_logo {
+    margin-bottom: 20px;
 }
 
 
