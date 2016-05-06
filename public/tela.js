@@ -1,12 +1,3 @@
-var tela_app = angular.module("tela",[]);
-
-tela_app.controller("tela_ctrl",function($scope){
-    
-    
-    
-});
-
-
 var dash_app = angular.module("dash",[]);
 dash_app.controller("dash_ctrl",function($scope){
     $scope.name = "Sensen"
