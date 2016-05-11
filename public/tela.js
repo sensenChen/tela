@@ -159,6 +159,70 @@ dash_app.controller("dash_ctrl",function($scope){
             $scope.subscription_type =p;
 //           console($scope.subscription_type);
 //        })
+        
+        
+        if(p=='payg'){
+            document.getElementById(String(p)).style.backgroundColor = "black";
+            document.getElementById(String(p)).style.color = "white";
+            
+            
+            document.getElementById("small").style.backgroundColor = "white";
+            document.getElementById("small").style.color = "black";
+            
+            document.getElementById("medium").style.backgroundColor = "white";
+            document.getElementById("medium").style.color = "black";
+            
+             document.getElementById("large").style.backgroundColor = "white";
+            document.getElementById("large").style.color = "black";
+        }
+        
+        if(p=='small'){
+            document.getElementById(String(p)).style.backgroundColor = "black";
+            document.getElementById(String(p)).style.color = "white";
+            
+            
+            document.getElementById("payg").style.backgroundColor = "white";
+            document.getElementById("payg").style.color = "black";
+            
+            document.getElementById("medium").style.backgroundColor = "white";
+            document.getElementById("medium").style.color = "black";
+            
+             document.getElementById("large").style.backgroundColor = "white";
+            document.getElementById("large").style.color = "black";
+        }
+        
+        if(p=='medium'){
+            document.getElementById(String(p)).style.backgroundColor = "black";
+            document.getElementById(String(p)).style.color = "white";
+            
+            
+            document.getElementById("small").style.backgroundColor = "white";
+            document.getElementById("small").style.color = "black";
+            
+            document.getElementById("payg").style.backgroundColor = "white";
+            document.getElementById("payg").style.color = "black";
+            
+             document.getElementById("large").style.backgroundColor = "white";
+            document.getElementById("large").style.color = "black";
+        }
+        
+        if(p=='large'){
+            document.getElementById(String(p)).style.backgroundColor = "black";
+            document.getElementById(String(p)).style.color = "white";
+            
+            
+            document.getElementById("small").style.backgroundColor = "white";
+            document.getElementById("small").style.color = "black";
+            
+            document.getElementById("medium").style.backgroundColor = "white";
+            document.getElementById("medium").style.color = "black";
+            
+             document.getElementById("payg").style.backgroundColor = "white";
+            document.getElementById("payg").style.color = "black";
+        }
+        
+        
+//        document.getElementById(String(p)).style("color","white");
     }
     
     
