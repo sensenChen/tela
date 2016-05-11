@@ -2,6 +2,15 @@ function list(){
     alert(this);
 }
 
+//function initMap() {
+//    // Create a map object and specify the DOM element for display.
+//    var map = new google.maps.Map(document.getElementById('map'), {
+//        center: {lat: -34.397, lng: 150.644},
+//        scrollwheel: false,
+//        zoom: 8
+//    });
+//}
+
 var track = function(step,date,date_time){
     var tracker = new Object(),steps = [], current = 0, d_date= "", d_time="";
     
@@ -78,7 +87,9 @@ function draw(track,id){
     document.getElementById(id).appendChild(tracker);
 }
 
-var dash_app = angular.module("dash",[]);
+var dash_app = angular.module('dash', ['uiGmapgoogle-maps']);
+
+
 dash_app.controller("dash_ctrl",function($scope){
     $scope.name = "Sensen"
     $scope.active = "Dashboard"
@@ -88,6 +99,9 @@ dash_app.controller("dash_ctrl",function($scope){
         {value:"Order", color: "9b9b9b"},
         {value:"Setting", color: "9b9b9b"},
     ];
+    
+//    $scope.map;
+    $scope.map = { center: { latitude: 42.7284, longitude: -73.6918 }, zoom: 8 };
     
     $scope.orders = [
         {
@@ -154,6 +168,8 @@ dash_app.controller("dash_ctrl",function($scope){
             $("#setting").hide();
             $("#dashboard").hide();
             $("#order").show();
+            
+//            console.log($scope.map)
         }
         else{
             $("#tracking").hide();
@@ -161,8 +177,6 @@ dash_app.controller("dash_ctrl",function($scope){
             $("#dashboard").hide();
             $("#setting").show();
         }
-        
-        
     }
     
      if($scope.active == "Dashboard"){
@@ -182,6 +196,7 @@ dash_app.controller("dash_ctrl",function($scope){
         $("#setting").hide();
         $("#dashboard").hide();
         $("#order").show();
+        $("#gmap").hide();
     }
     else{
         $("#tracking").hide();
@@ -209,6 +224,9 @@ dash_app.controller("dash_ctrl",function($scope){
         if($scope.orders[i]["status"]!=6)
             draw(t,"main_body");
     }
+    
+//    initMap();
+    
 //    
 //    
 //    var t1 = track(2,"10:30","April 16");

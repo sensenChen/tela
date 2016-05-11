@@ -13,20 +13,34 @@
     </head>
     <body>
         
-          
-    
+<!--        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3wSmnLBZ5c72rIOa-1SY7pRWEytnd0Dw&callback=initMap" async defer></script>-->
+        
+        <script src='https://cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js'></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-        <script src="tela.js"></script>
+        <script src='angular-simple-logger.js'></script>
+        
+        <script src="angular-google-maps.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src='//maps.googleapis.com/maps/api/js?key=AIzaSyD3wSmnLBZ5c72rIOa-1SY7pRWEytnd0Dw'></script>
+<!--
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+                });
+            }
+            initMap();
+        </script>
+        
+-->
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<!--
-        <div ng-app="tela" ng-controller="tela_ctrl">
-        </div>
--->
+        <script src="tela.js"></script>
         
-        
+
 
         
         <div ng-app="dash" ng-controller="dash_ctrl" style="width:100%;margin:0px;">
@@ -138,7 +152,29 @@
                     </div>     
                 </div>  
                 
-                <div id="order" class="col-lg-9">        
+                <div id="order" class="col-lg-9">
+                    <div class="row" style="margin-0px;">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-8" id="main_body_order">
+                            <center>
+                                <h1>Order</h1> 
+                                
+                                <form>
+                                    
+                                    Quantity: <input class="form-control" type="text"> 
+                                    Pickup Time: <input class="form-control" type="text"> 
+                                    Address: <input class="form-control" type="text"> 
+                                    Cell: <input class="form-control" type="text">
+                                    
+                                </form>
+                                
+                                <img src="map.png" width="400px" id="map">
+                            </center>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
                 </div> 
                 
                 <div id="setting" class="col-lg-9">        
