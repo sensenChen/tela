@@ -91,8 +91,9 @@ var dash_app = angular.module('dash', ['uiGmapgoogle-maps']);
 
 
 dash_app.controller("dash_ctrl",function($scope){
-    $scope.name = "Sensen"
-    $scope.active = "Dashboard"
+    $scope.name = "Sensen";
+    $scope.active = "Dashboard";
+    $scope.address = "2219 15th Street";
     $scope.options = [
         {value:"Dashboard", color: "black"},
         {value:"Tracking", color: "9b9b9b"},
@@ -136,7 +137,7 @@ dash_app.controller("dash_ctrl",function($scope){
         },
     ];
     
-    $scope.new_address = "";
+//    $scope.new_address = "";
     $scope.new_quantity = "";
     $scope.new_time = "";
     $scope.new_cell = "";
@@ -185,6 +186,13 @@ dash_app.controller("dash_ctrl",function($scope){
             $("#setting").hide();
             $("#dashboard").hide();
             $("#order").show();
+            
+            if($scope.address == "806 Riverview Rd"){
+                document.getElementById("map").setAttribute("src","map2.png");
+            }
+            else if($scope.address == "2219 15th Street"){
+                document.getElementById("map").setAttribute("src","map.png");
+            }
             
 //            console.log($scope.map)
         }
