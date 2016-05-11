@@ -91,9 +91,13 @@ var dash_app = angular.module('dash', ['uiGmapgoogle-maps']);
 
 
 dash_app.controller("dash_ctrl",function($scope){
-    $scope.name = "Sensen";
-    $scope.active = "Dashboard";
+
+    
+    $scope.first_name = "Sensen"
+    $scope.last_name = "Chen"
+    $scope.active = "Dashboard"
     $scope.address = "2219 15th Street";
+    
     $scope.options = [
         {value:"Dashboard", color: "black"},
         {value:"Tracking", color: "9b9b9b"},

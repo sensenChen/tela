@@ -5,6 +5,16 @@
     
 }
 
+.subbtn {
+  padding: 30px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.stbbtn : hover{
+  color: blue;
+}
+
 #map {
    border: 0px solid black; 
     width: 100%;
