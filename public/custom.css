@@ -6,13 +6,18 @@
 }
 
 .subbtn {
-  padding: 30px;
+  width: 120px;
+  height: 140px;
   border: 2px solid black;
-  border-radius: 20px;
+  border-radius: 10px;
+
+  display: inline-block;
+  /*padding-top: 20px;*/
 }
 
-.stbbtn : hover{
-  color: blue;
+.subbtn p{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #map {
