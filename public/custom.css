@@ -68,7 +68,7 @@
 }
 
 .main_btn {
-
+    
 }
 
 .btn_link{
@@ -112,6 +112,16 @@
     margin-top: 10px;
 }
 
+#dashboard{
+/*    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+    margin: 0px;
+    padding: 20px;
+/*    width: 300px;*/
+/*    height: "match_parent";*/
+    min-height: 40em;
+    float: left;
+/*    background: blue;*/
+}
 
 #sidemenu {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -119,7 +129,8 @@
     padding: 30px;
     width: 300px;
 /*    height: "match_parent";*/
-/*    min-height: 60em;*/
+    min-height: 40em;
+    float: left;
 }
 
 #sidemenu h4{
@@ -141,6 +152,61 @@
 
 #side_logo {
     margin-bottom: 20px;
+}
+
+#subscription {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#subscription p{
+/*    margin-top: 10px;*/
+    font-weight: 300;
+}
+#subscription h2 {
+    margin-bottom: 30px;
+}
+
+#order_history {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tracker {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tracker h1{
+    margin-bottom: 20px;
+}
+
+.tracker{
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+/*    margin-left: 20px;*/
+}
+
+.trackball {
+    
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin: 0px;
+    margin-left: -1px;
+    padding: 0px;
+}
+
+.trackline {
+    margin-bottom: 3px;
+    width: 40px;
+    padding: 0px;
+    border:1px solid black;
+    display: inline-block;
 }
 
 
