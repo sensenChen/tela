@@ -209,6 +209,20 @@
     display: inline-block;
 }
 
+#main_body {
+    margin: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding:50px;
+}
+
+#main_body h1{
+    margin-bottom: 50px;
+}
+
+#main_body .tracker {
+    display: inline-block;
+}
+
 
 /*_________________*/
 body {

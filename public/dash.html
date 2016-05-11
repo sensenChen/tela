@@ -122,7 +122,27 @@
                             </div>
                         </div>
                     </div>         
+                </div>
+                
+                <div id="tracking" class="col-lg-9">
+                    <div class="row" style="margin-0px;">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-8" id="main_body">
+                            <center>
+                                <h1>Tracking</h1> 
+                            </center>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>     
                 </div>  
+                
+                <div id="order" class="col-lg-9">        
+                </div> 
+                
+                <div id="setting" class="col-lg-9">        
+                </div> 
             </div>
             
             <script>
@@ -145,12 +165,30 @@
                 $("#sidemenu").height($(window).height()-60);
                 $("#dashboard").height($(window).height()-60);
                 $("#dashboard").width($(document).width()-360);
+//                
+//                $("#tracking").height($(window).height()-60);
+//                $("#tracking").width($(document).width()-360);
+//                
+//                $("#order").height($(window).height()-60);
+//                $("#order").width($(document).width()-360);
+//                
+//                $("#setting").height($(window).height()-60);
+//                $("#setting").width($(document).width()-360);
                 
                 $(window).resize(function() {
                     $("#sidemenu").height($(window).height()-60);
                     $("#dashboard").height($(window).height()-60);
                     $("#dashboard").width($(document).width()-360);
-                    
+                           
+//                    $("#tracking").height($(window).height()-60);
+//                    $("#tracking").width($(document).width()-360);
+//
+//                    $("#order").height($(window).height()-60);
+//                    $("#order").width($(document).width()-360);
+//
+//                    $("#setting").height($(window).height()-60);
+//                    $("#setting").width($(document).width()-360);
+
                     if($(window).width()>900){
                         $("#orderhistory").width(500);
                     }

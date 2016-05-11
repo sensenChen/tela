@@ -1,3 +1,7 @@
+function list(){
+    alert(this);
+}
+
 var track = function(step,date,date_time){
     var tracker = new Object(),steps = [], current = 0, d_date= "", d_time="";
     
@@ -21,7 +25,7 @@ var track = function(step,date,date_time){
     return tracker;
 };
 
-function draw(track){
+function draw(track,id){
     var tracker = document.createElement("div");
     tracker.setAttribute("class","tracker");
     
@@ -38,18 +42,28 @@ function draw(track){
         if(track.steps[i]==0){
             var dot = document.createElement("img");
             dot.setAttribute("src","Oval1.png");
+            dot.addEventListener("mouseover",function(){
+//                alert("this");
+            });
             dot.setAttribute("class","trackball");
             tracker.appendChild(dot);
         }
         else if(track.steps[i]==1){
             var dot = document.createElement("img");
             dot.setAttribute("src","Oval2.png");
+            dot.addEventListener("mouseover",function(){
+//               alert("this");
+            });
             dot.setAttribute("class","trackball");
             tracker.appendChild(dot);
         }
         else {
             var dot = document.createElement("img");
+//            
             dot.setAttribute("src","Oval3.png");
+            dot.addEventListener("mouseover",function(){
+//                alert("this");
+            });
             dot.setAttribute("class","trackball");
             tracker.appendChild(dot);
         }
@@ -61,7 +75,7 @@ function draw(track){
         }      
     }
 
-    document.getElementById("tracker").appendChild(tracker);
+    document.getElementById(id).appendChild(tracker);
 }
 
 var dash_app = angular.module("dash",[]);
@@ -151,16 +165,49 @@ dash_app.controller("dash_ctrl",function($scope){
         
     }
     
+     if($scope.active == "Dashboard"){
+        $("#tracking").hide();
+        $("#order").hide();
+        $("#setting").hide();
+        $("#dashboard").show();
+    }
+    else if($scope.active == "Tracking"){
+        $("#order").hide();
+        $("#setting").hide();
+        $("#dashboard").hide();
+        $("#tracking").show();
+    }
+    else if($scope.active == "Order"){
+        $("#tracking").hide();
+        $("#setting").hide();
+        $("#dashboard").hide();
+        $("#order").show();
+    }
+    else{
+        $("#tracking").hide();
+        $("#order").hide();
+        $("#dashboard").hide();
+        $("#setting").show();
+    }
+    
     for(var i=0;i<$scope.orders.length;i++){
         if(i==3)
             break;
-        
-        
-        
+  
         var t = track($scope.orders[i]["status"],$scope.orders[i]["time"],$scope.orders[i]["date"])
         
         if($scope.orders[i]["status"]!=6)
-            draw(t);
+            draw(t,"tracker");
+    }
+    
+    for(var i=0;i<$scope.orders.length;i++){
+//        if(i==3)
+//            break;
+
+        var t = track($scope.orders[i]["status"],$scope.orders[i]["time"],$scope.orders[i]["date"])
+
+        if($scope.orders[i]["status"]!=6)
+            draw(t,"main_body");
     }
 //    
 //    
