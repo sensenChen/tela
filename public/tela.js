@@ -93,10 +93,12 @@ var dash_app = angular.module('dash', ['uiGmapgoogle-maps']);
 dash_app.controller("dash_ctrl",function($scope){
 
     
-    $scope.first_name = "Sensen"
-    $scope.last_name = "Chen"
-    $scope.active = "Dashboard"
-    $scope.address = "2219 15th Street";
+    $scope.first_name = "Sensen";
+    $scope.last_name = "Chen";
+    $scope.active = "Dashboard";
+//    $scope.plan = "PAYG";
+//    $scope.address = "2219 15th Street";
+    $scope.address = "806 Riverview Rd";
     
     $scope.options = [
         {value:"Dashboard", color: "black"},
@@ -150,7 +152,15 @@ dash_app.controller("dash_ctrl",function($scope){
     
     
     $scope.subscription_type = "small";
-    $scope.payment = {small:10,medium:20,large:30};
+    $scope.payment = {payg:0,small:10,medium:20,large:30};
+    
+    $scope.set_pay_plan = function(p){
+//        $scope.$apply(function(){
+            $scope.subscription_type =p;
+//           console($scope.subscription_type);
+//        })
+    }
+    
     
     $scope.change = function(){
         $scope.active = this["o"]["value"];
@@ -306,9 +316,6 @@ dash_app.controller("dash_ctrl",function($scope){
 //            alert("true")
             count++;
         }
-        
-
-        
     }
 });
 

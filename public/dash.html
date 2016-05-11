@@ -102,7 +102,7 @@
                         <div class="col-md-6">
                             <div id="subscription">
                                 <h2>Subscription</h2>
-                                <p><b>Subscription Type: </b> {{subscription_type}}</p>
+                                <p ng-model="subscription_type"><b>Subscription Type: </b> {{subscription_type}}</p>
                                 <p><b>Next Payment: </b> April 28th</p>
                                 <p><b>Next Payment Amount: </b> ${{payment[subscription_type]}}</p>
                             </div>
@@ -238,47 +238,51 @@
                                 </div>
                             </form>   
                             
-                            <label>Subscription</label>
+                            <label style="width:400px;text-display:left;margin-bottom:30px">Subscription</label>
+<!--
                             <br>
                             <br>
-                            <!-- <br> -->
-                            <div class="subbtn" id="payg">
-                                <center>
-                                    <p>PAYG</p>
-                                </center>
-                                <center>
-                                    <p>$6/bag</p>
-                                </center>
+                             <br> 
+-->
+                            <div class="col-sm-14" id="payment_btn">
+                                <a class="subbtn" id="payg" ng-click='set_pay_plan("payg")'>
+                                    <center>
+                                        <p>PAYG</p>
+                                    </center>
+                                    <center>
+                                        <p>$6/bag</p>
+                                    </center>
+                                </a>
+
+                                <a class="subbtn" ng-click='set_pay_plan("small")'>
+                                    <center>
+                                        <p>Small Plan</p>
+                                    </center>
+                                    <center>
+                                        <p>2 bags for 10</p>
+                                    </center>
+                                </a>
+
+                                <a class="subbtn" ng-click='set_pay_plan("medium")'>
+                                    <center>
+                                        <p>Medium Plan</p>
+                                    </center>
+                                    <center>
+                                        <p>6 bags for 20</p>
+                                    </center>
+                                </a>
+
+                                <a class="subbtn" ng-click='set_pay_plan("large")'>
+                                    <center>
+                                        <p>Large Plan</p>
+                                    </center>
+                                    <center>
+                                        <p>12 bags for 30</p>
+                                    </center>
+                                </a>
+
+
                             </div>
-
-                            <div class="subbtn">
-                                <center>
-                                    <p>Small</p>
-                                </center>
-                                <center>
-                                    <p>$6/bag</p>
-                                </center>
-                            </div>
-
-                            <div class="subbtn">
-                                <center>
-                                    <p>PAYG</p>
-                                </center>
-                                <center>
-                                    <p>$6/bag</p>
-                                </center>
-                            </div>
-
-                            <div class="subbtn">
-                                <center>
-                                    <p>PAYG</p>
-                                </center>
-                                <center>
-                                    <p>$6/bag</p>
-                                </center>
-                            </div>
-
-
                         </div>
                         <div class="col-md-2">
                         </div>
