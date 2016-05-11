@@ -6,7 +6,13 @@
 }
 
 #map {
-   border: 10px solid black; 
+   border: 0px solid black; 
+    width: 100%;
+}
+
+#tracking_box{
+    margin: 0px;
+    padding: 0px;
 }
 
 #navright {

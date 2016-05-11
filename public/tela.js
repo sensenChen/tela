@@ -38,7 +38,7 @@ function draw(track,id){
     var tracker = document.createElement("div");
     tracker.setAttribute("class","tracker");
     
-    var str = "Order at ";
+    var str = "Order for ";
     str += track["d_date"];
     str += " ";
     str += track["d_time"];
@@ -102,6 +102,8 @@ dash_app.controller("dash_ctrl",function($scope){
     
 //    $scope.map;
     $scope.map = { center: { latitude: 42.7284, longitude: -73.6918 }, zoom: 8 };
+    $scope.activenum = 56785;
+    
     
     $scope.orders = [
         {
@@ -134,6 +136,11 @@ dash_app.controller("dash_ctrl",function($scope){
         },
     ];
     
+    $scope.new_address = "";
+    $scope.new_quantity = "";
+    $scope.new_time = "";
+    $scope.new_cell = "";
+    
     $scope.status_message = ["Ordered","Picked Up","At Laundromat","Washing","Drying","Dropping Off","Finished"]
     
     
@@ -158,6 +165,16 @@ dash_app.controller("dash_ctrl",function($scope){
             $("#dashboard").show();
         }
         else if($scope.active == "Tracking"){
+            if($scope.orders.length>0)
+                $( "#tracking_box" ).empty();
+                
+            for(var i=$scope.orders.length-1;i>=0;i--){
+                var t = track($scope.orders[i]["status"],$scope.orders[i]["time"],$scope.orders[i]["date"]);
+
+                if($scope.orders[i]["status"]!=6)
+                    draw(t,"tracking_box");
+            }
+            
             $("#order").hide();
             $("#setting").hide();
             $("#dashboard").hide();
@@ -179,11 +196,12 @@ dash_app.controller("dash_ctrl",function($scope){
         }
     }
     
-     if($scope.active == "Dashboard"){
+    if($scope.active == "Dashboard"){
         $("#tracking").hide();
-        $("#order").hide();
+//        $("#order").hide();
         $("#setting").hide();
-        $("#dashboard").show();
+        $("#dashboard").hide();
+//        $("#dashboard").show();
     }
     else if($scope.active == "Tracking"){
         $("#order").hide();
@@ -203,39 +221,82 @@ dash_app.controller("dash_ctrl",function($scope){
         $("#order").hide();
         $("#dashboard").hide();
         $("#setting").show();
-    }
+    } 
     
-    for(var i=0;i<$scope.orders.length;i++){
-        if(i==3)
-            break;
-  
-        var t = track($scope.orders[i]["status"],$scope.orders[i]["time"],$scope.orders[i]["date"])
+    $scope.goto_dash = function(){
+        $scope.orders.push({
+            order_num: $scope.activenum + 1,
+            quantity: Number($scope.new_quantity),
+            time: String($scope.new_time),
+            date: "May 11th",
+            status: 0         
+        });
         
-        if($scope.orders[i]["status"]!=6)
+        $scope.activenum++;
+        $scope.new_time = "";
+        $scope.new_quantity = ""
+        $scope.new_time = "";
+        
+        $scope.active = "Dashboard";
+        for(var i=0;i<$scope.options.length;i++){
+            if($scope.options[i]["value"] == $scope.active){
+                $scope.options[i]["color"] = "black";
+            }    
+            else{
+                $scope.options[i]["color"] = "#9b9b9b";
+            }    
+        }
+        
+        $("#tracking").hide();
+        $("#order").hide();
+        $("#setting").hide();
+        $("#dashboard").show();
+    }
+    
+    if($scope.active == "Dashboard"){
+        $("#tracking").hide();
+        $("#order").hide();
+        $("#setting").hide();
+//        $("#dashboard").hide();
+        $("#dashboard").show();
+    }
+    else if($scope.active == "Tracking"){
+       
+        $("#order").hide();
+        $("#setting").hide();
+        $("#dashboard").hide();
+        $("#tracking").show();
+    }
+    else if($scope.active == "Order"){
+        $("#tracking").hide();
+        $("#setting").hide();
+        $("#dashboard").hide();
+        $("#order").show();
+//        $("#gmap").hide();
+    }
+    else{
+        $("#tracking").hide();
+        $("#order").hide();
+        $("#dashboard").hide();
+        $("#setting").show();
+    }
+    
+    
+    var count = 0;
+    for(var i=$scope.orders.length-1;i>=0;i--){
+        if(count == 3)
+            break;
+        
+        var t = track($scope.orders[i]["status"],$scope.orders[i]["time"],$scope.orders[i]["date"]);
+        
+        if($scope.orders[i]["status"]!=6){
             draw(t,"tracker");
-    }
-    
-    for(var i=0;i<$scope.orders.length;i++){
-//        if(i==3)
-//            break;
+//            alert("true")
+            count++;
+        }
+        
 
-        var t = track($scope.orders[i]["status"],$scope.orders[i]["time"],$scope.orders[i]["date"])
-
-        if($scope.orders[i]["status"]!=6)
-            draw(t,"main_body");
+        
     }
-    
-//    initMap();
-    
-//    
-//    
-//    var t1 = track(2,"10:30","April 16");
-//    draw(t1);
-//    
-//    var t2 = track(5,"10:30","April 16");
-//    draw(t2);
-//    
-//    var t3 = track(4,"10:30","April 16");
-//    draw(t3);
 });
 
